@@ -1,7 +1,7 @@
 import React from "react";
 const x = JSON.parse(localStorage.getItem('user'))
 class Login extends React.Component{
-    
+
     constructor(props){
     super(props);
 
@@ -16,18 +16,18 @@ class Login extends React.Component{
     handleChange(event){
     const name = event.target && event.target.name;
     const value = event.target && event.target.value;
-    this.setState({[name]: value});
+    this.setState({...this.state,[name]: value});
+    console.log (this.state)
 }
     reset(){
         window.location.reload(false);
     }
 
     submit(event){
-        if(event.studentid==x.studentid){
-            alert('ewam')
-        }else{
-            alert('a')
-        }
+        if
+            (this.state.studentid === x.studentid && this.state.password===x.password)
+                { alert(`hello ${x.firstname}`) }
+        else { alert('invalid credentials') }
     }
 
     route(){
@@ -37,18 +37,44 @@ class Login extends React.Component{
     render(){
         return(
 
-            <div>
-            <h1>Login </h1>
+            <div className="container">
             <form onSubmit={this.submit}>
-                <label>Username: </label>
-                <input type="text" name="studentid" />
-                <br></br><br></br>
-                <label>Password: </label>
-                <input type="password" name="password"/>
-                <br></br><br></br>
-                <input type='submit' value="Login"></input>
-                <input type='button' value="Cancel" onClick={this.reset}></input>
-                <input type='button' value="Register" onClick={this.route}></input>
+            <h3>Log In</h3>
+            <div className="inputBox">
+                <span>Username</span>
+                <div className="box">
+                <div className="icon">
+                    {/* <ion-icon name="person"></ion-icon> */}
+                </div>
+                <input onChange={this.handleChange} type="text" name="studentid" />
+
+                </div>
+            </div>
+
+            <div className="inputBox">
+                <span>Password</span>
+                <div className="box">
+                    <div className="icon">
+                    {/* <ion-icon name="lock-closed"></ion-icon> */}
+                </div>
+                <input onChange={this.handleChange} type="password" name="password"/>
+                </div>
+            </div>
+
+            <label>
+                <input type="checkbox"/>Remember me
+            </label>
+
+            <div className="inputBox">
+                <div className="box">
+                    <input type='submit' value="Login"></input>
+                    <input type='button' value="Cancel" onClick={this.reset}></input>
+                    <input type='button' value="Register" onClick={()=>this.props.setpage("register")}></input>
+                </div>
+            </div>
+
+            <a href="#" className="forgot">Forgot the password?</a>
+
 
             </form>
             </div>
@@ -57,3 +83,4 @@ class Login extends React.Component{
 }
 
 export default Login;
+
