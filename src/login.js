@@ -24,10 +24,13 @@ class Login extends React.Component{
     }
 
     submit(event){
-        if
-            (this.state.studentid === x.studentid && this.state.password===x.password)
-                { alert(`hello ${x.firstname}`) }
-        else { alert('invalid credentials') }
+        // console.log(event.target.studentid.value)
+        // const id= x.studentid
+        if(event.target.studentid.value==x.studentid && event.target.password.value==x.password){
+            alert('Welcome ' + x.fn + " " + x.ln)
+        }else{
+            alert('Password Incorrect')
+        }
     }
 
     route(){
