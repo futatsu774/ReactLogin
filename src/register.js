@@ -43,7 +43,7 @@ class Register extends React.Component {
         return (
 
             <div className="container">
-                <form onSubmit={this.submit}>
+                <form onSubmit={this.handleSubmit}>
                     <h3>Log In</h3>
                     <div className="inputBox">
                         <span>Username/StudentIDnumber</span>
