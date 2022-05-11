@@ -48,63 +48,63 @@ class Register extends React.Component {
                     <div className="inputBox">
                         <span>Username/StudentIDnumber</span>
                         <div className="box">
-                            <input type="text" name="studentid" onChange={this.handleChange} />
+                            <input type="text" name="studentid" onChange={this.handleChange}required title="Student ID must be 10 digits" pattern=".{10,10}" />
                         </div>
                     </div>
 
                     <div className="inputBox">
                         <span>LastName</span>
                         <div className="box">
-                            <input type="text" name="ln" onChange={this.handleChange} />
+                            <input type="text" name="ln" onChange={this.handleChange}required />
                         </div>
                     </div>
 
                     <div className="inputBox">
                         <span>FirstName</span>
                         <div className="box">
-                            <input type="text" name="fn" onChange={this.handleChange} />
+                            <input type="text" name="fn" onChange={this.handleChange}required />
                         </div>
                     </div>
 
                     <div className="inputBox">
                         <span>MiddleName</span>
                         <div className="box">
-                            <input type="text" name="mn" onChange={this.handleChange} />
+                            <input type="text" name="mn" onChange={this.handleChange} required/>
                         </div>
                     </div>
 
                     <div className="inputBox">
                         <span>College</span>
                         <div className="box">
-                            <input type="text" name="college" onChange={this.handleChange} />
+                            <input type="text" name="college" onChange={this.handleChange}required />
                         </div>
                     </div>
 
                     <div className="inputBox">
                         <span>ProgramEnrolled</span>
                         <div className="box">
-                            <input type="text" name="progenroll" onChange={this.handleChange} />
+                            <input type="text" name="progenroll" onChange={this.handleChange} required/>
                         </div>
                     </div>
 
                     <div className="inputBox">
                         <span>YearLevel</span>
                         <div className="box">
-                            <input type="text" name="yl" onChange={this.handleChange} />
+                            <input type="text" name="yl" onChange={this.handleChange} required/>
                         </div>
                     </div>
 
                     <div className="inputBox">
                         <span>Password</span>
                         <div className="box">
-                            <input type="password" name="password" onChange={this.handleChange} />
+                            <input type="password" name="password" onChange={this.handleChange} required  pattern='(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$'/>
                         </div>
                     </div>
 
                     <div className="inputBox">
                         <span>ConfirmPassword</span>
                         <div className="box">
-                            <input type="text" name="cpassword" onChange={this.handleChange} />
+                            <input type="text" name="cpassword" onChange={this.handleChange} required/>
                         </div>
                     </div>
 

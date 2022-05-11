@@ -49,7 +49,7 @@ class Login extends React.Component{
                 <div className="icon">
                     {/* <ion-icon name="person"></ion-icon> */}
                 </div>
-                <input onChange={this.handleChange} type="text" name="studentid" />
+                <input onChange={this.handleChange} type="text" name="studentid" required title='StudentID must be 10 digits'pattern=".{10,10}"/>
 
                 </div>
             </div>
@@ -60,7 +60,7 @@ class Login extends React.Component{
                     <div className="icon">
                     {/* <ion-icon name="lock-closed"></ion-icon> */}
                 </div>
-                <input onChange={this.handleChange} type="password" name="password"/>
+                <input onChange={this.handleChange} type="password" name="password"required/>
                 </div>
             </div>
 
